@@ -1,0 +1,39 @@
+import datetime
+def rule_based_chatbot():
+    print("🤖 Chatbot: Hello! I am your upgraded rule-based AI assistant. (Type 'exit' or 'bye' to quit)")
+
+    while True:
+        raw_input = input("You: ").strip().lower()
+        cleaned_input = "".join([char for char in raw_input if char not in ["?", "!", ".", ","]])
+
+        if cleaned_input in ['exit', 'bye', 'quit']:
+            print("🤖 Chatbot: Goodbye! Have a great day ahead! 👋")
+            break
+
+        elif cleaned_input in ['hello', 'hi', 'hey', 'sup']:
+            print("🤖 Chatbot: Hello there! How can I help you today? 😊")
+
+        elif 'how are you' in cleaned_input:
+            print("🤖 Chatbot: I'm just a bundle of code, but I'm running perfectly! How are you?")
+
+        elif 'your name' in cleaned_input:
+            print("🤖 Chatbot: I am the DecodeLabs Project 1 Chatbot. Built with pure logic!")
+
+        elif 'thank you' in cleaned_input or 'thanks' in cleaned_input:
+            print("🤖 Chatbot: You're very welcome! I'm happy to help. 🌟")
+
+        elif 'time' in cleaned_input:
+            current_time = datetime.datetime.now().strftime("%I:%M %p")
+            print(f"🤖 Chatbot: The current system time is {current_time}. ⏰")
+
+        elif 'weather' in cleaned_input:
+            print("🤖 Chatbot: Since I am a purely rule-based offline bot, I can't check the live sky, but I hope it's sunny where you are! ☀️")
+
+        elif 'help' in cleaned_input:
+            print("🤖 Chatbot: I can check the 'time', talk about the 'weather', say 'hello', or handle a 'thank you'!")
+
+        else:
+            print("🤖 Chatbot: I'm not sure I understand that yet. Remember, I'm purely rule-based! 🧠")
+
+if __name__ == "__main__":
+    rule_based_chatbot()
